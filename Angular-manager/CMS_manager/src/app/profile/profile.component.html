@@ -1,0 +1,80 @@
+<div class="card-container">
+	<span class="pro">PRO</span>
+	<img class="round" src="http://localhost:30/api/v1/profile/avatar/{{user.avatar}}" alt="user" />
+	<h3>{{user.name}}</h3>
+	<h6>{{user.roles}}</h6>
+	<p>User interface designer and <br/> front-end developer</p>
+	<div class="buttons">
+		<button class="primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRightt" aria-controls="offcanvasRight">
+			Update Avatar
+		</button>
+		<button class="primary ghost" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+			Change Password
+		</button>
+	</div>
+	<div class="skills">
+		<h6>Skills</h6>
+		<ul>
+			<li>UI / UX</li>
+			<li>Front End Development</li>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JavaScript</li>
+			<li>React</li>
+			<li>Node</li>
+		</ul>
+	</div>
+</div>
+<div class="container">
+    <h2>Calendar of {{user.name}}</h2>
+    <ul class="responsive-table" >
+		
+      <li class="table-header">
+        <div class="col col-1">Id</div>
+        <div class="col col-2">Name</div>
+        <div class="col col-3">Start</div>
+        <div class="col col-4">End</div>
+		<div class="col col-4">Limit</div>
+      </li>
+      <li class="table-row" *ngFor="let calendar of calendarUser">
+        <div class="col col-1" data-label="Job Id">{{calendar.id}}</div>
+        <div class="col col-2" data-label="Customer Name">{{calendar.name}}</div>
+        <div class="col col-3" data-label="Amount">{{Calendars.lessonStart}}H</div>
+        <div class="col col-4" data-label="Payment Status">{{Calendars.lessonEnd}}H</div>
+		<div class="col col-4" data-label="Payment Status">{{calendar.limit}}-Student</div>
+      </li>
+    </ul>
+  </div>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+	<div class="offcanvas-header">
+	  <h5 id="offcanvasRightLabel">Change Password Of you</h5>
+	  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
+		<p>New Password</p>
+		<input type="password" name="password" [(ngModel)]="password">
+		<p>Enter Password Again</p>
+		<input type="password" name="passwordAgin">
+	</div>
+	<button class="primary" (click)="updatePass()">Ok</button>
+  </div>
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRightt" aria-labelledby="offcanvasRightLabel">
+	<div class="offcanvas-header">
+	  <h5 id="offcanvasRightLabel">Change Avata</h5>
+	  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body">
+		<p>Please choice image from local computer</p>
+		<div class="group">
+			<input
+				type="file"
+				(change)="fileChange($event)"
+			/>
+		</div>
+		
+		<button class="primary" (click)="updateAva()">Change</button>
+	</div>
+  </div>
+  
+
+
