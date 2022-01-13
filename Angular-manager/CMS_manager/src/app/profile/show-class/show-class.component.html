@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>List Class</h2>
+    <ul class="responsive-table" >
+      <li class="table-header">
+        <div class="col col-1">Id</div>
+        <div class="col col-2">Name</div>
+        <div class="col col-3">Start</div>
+        <div class="col col-4">End</div>
+		<div class="col col-4">Limit</div>
+      </li>
+      <li class="table-row" *ngFor="let list of class">
+        <div class="col col-1" data-label="Job Id">{{list.name}}</div>
+        <div class="col col-2" data-label="Customer Name">{{list.lessonStart}}</div>
+        <div class="col col-3" data-label="Amount">{{list.lessonEnd}}</div>
+        <div class="col col-4" data-label="Payment Status">{{list.limit}}</div>
+		<div class="col col-4" data-label="Payment Status"></div>
+      </li>
+    </ul>
+  </div>

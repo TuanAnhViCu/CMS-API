@@ -9,9 +9,9 @@ import { CookieService } from 'ngx-cookie-service';
 export class CreateClassService {
   url:string = "http://localhost:30/api/v1/admin/create-class"
   constructor(private http:HttpClient,private cookie:CookieService) { }
-  createClass(name:any,limit:any):Observable<any>{
+  createClass(name:any,limit:any,lessonStart:any,lessonEnd:any):Observable<any>{
     const headers = {'Accept':'application/json',
     'Authorization': `Bearer ${this.cookie.get('accesss-token')}`}
-    return this.http.post(this.url,{name,limit},{headers})
+    return this.http.post(this.url,{name,limit,lessonStart,lessonEnd},{headers})
   }
 }

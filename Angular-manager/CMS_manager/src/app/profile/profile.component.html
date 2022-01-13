@@ -1,3 +1,15 @@
+<input type="checkbox" id="active">
+<label for="active" class="menu-btn"><span></span></label>
+<label for="active" class="close"></label>
+<div class="wrapper">
+  <ul>
+<li><a routerLink="calendar-study">Calendar</a></li>
+<li><a routerLink="list-class">Class</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Gallery</a></li>
+<li><a href="#">Feedback</a></li>
+</ul>
+</div>
 <div class="card-container">
 	<span class="pro">PRO</span>
 	<img class="round" src="http://localhost:30/api/v1/profile/avatar/{{user.avatar}}" alt="user" />
@@ -25,26 +37,7 @@
 		</ul>
 	</div>
 </div>
-<div class="container">
-    <h2>Calendar of {{user.name}}</h2>
-    <ul class="responsive-table" >
-		
-      <li class="table-header">
-        <div class="col col-1">Id</div>
-        <div class="col col-2">Name</div>
-        <div class="col col-3">Start</div>
-        <div class="col col-4">End</div>
-		<div class="col col-4">Limit</div>
-      </li>
-      <li class="table-row" *ngFor="let calendar of calendarUser">
-        <div class="col col-1" data-label="Job Id">{{calendar.id}}</div>
-        <div class="col col-2" data-label="Customer Name">{{calendar.name}}</div>
-        <div class="col col-3" data-label="Amount">{{Calendars.lessonStart}}H</div>
-        <div class="col col-4" data-label="Payment Status">{{Calendars.lessonEnd}}H</div>
-		<div class="col col-4" data-label="Payment Status">{{calendar.limit}}-Student</div>
-      </li>
-    </ul>
-  </div>
+<router-outlet></router-outlet>
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
 	<div class="offcanvas-header">
 	  <h5 id="offcanvasRightLabel">Change Password Of you</h5>

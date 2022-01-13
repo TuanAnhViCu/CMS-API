@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
     this.loginform.postLogin(this.email,this.password).subscribe((data:any)=>{
 
       if(data.findUser.roles == 'admin'){
-        this.cookie.set('accesss-token',data.token);
         this.router.navigate(['/admin'])
+        this.cookie.set('accesss-token',data.token);
       }else{
         this.cookie.set('accesss-token',data.token);
         this.router.navigate(['/profile-user'])
