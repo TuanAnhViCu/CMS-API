@@ -1,3 +1,4 @@
+import { ShowRegisteredComponent } from './profile/show-registered/show-registered.component';
 import { ShowClassComponent } from './profile/show-class/show-class.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,21 +10,23 @@ import { IndexComponent } from './Admin/index/index.component';
 import { CreateClassComponent } from './Admin/create-class/create-class.component';
 import { TableComponent } from './Admin/table/table.component';
 import { CalendarStudyComponent } from './profile/calendar-study/calendar-study.component';
-
+import { ManagerRegisterComponent } from './Admin/manager-register/manager-register.component';
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'profile-user',component:ProfileComponent,
     children:[
       {path:'calendar-study',component:CalendarStudyComponent},
-      {path:'list-class',component:ShowClassComponent}
+      {path:'list-class',component:ShowClassComponent},
+      {path:'list-registered',component:ShowRegisteredComponent}
     ]
   },
   {path:'verify-email',component:VerifyEmailComponent},
   {path:'admin',component:IndexComponent,
     children:[
       { path:'create-class',component:CreateClassComponent},
-      {path:'manager',component:TableComponent}
+      {path:'manager',component:TableComponent},
+      {path:'manger-register',component:ManagerRegisterComponent}
     ]
 }
   

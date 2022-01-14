@@ -1,15 +1,13 @@
-<input type="checkbox" id="active">
-<label for="active" class="menu-btn"><span></span></label>
-<label for="active" class="close"></label>
-<div class="wrapper">
-  <ul>
-<li><a routerLink="calendar-study">Calendar</a></li>
-<li><a routerLink="list-class">Class</a></li>
-<li><a href="#">Services</a></li>
-<li><a href="#">Gallery</a></li>
-<li><a href="#">Feedback</a></li>
-</ul>
-</div>
+<details>
+	<summary></summary>
+	<nav class="menu">
+	  <a routerLink="calendar-study">Calendar</a>
+	  <a routerLink="list-class">Class</a>
+	  <a routerLink="list-registered">Registered</a>
+	  <a href="#link">Contact</a>
+	  <a href="#link">About</a>
+	</nav>
+  </details>
 <div class="card-container">
 	<span class="pro">PRO</span>
 	<img class="round" src="http://localhost:30/api/v1/profile/avatar/{{user.avatar}}" alt="user" />

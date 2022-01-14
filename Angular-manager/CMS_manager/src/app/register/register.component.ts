@@ -29,5 +29,6 @@ fileChange(element:any) {
 }
 postRegister(){
   this.register.registerUser(this.email,this.password,this.name).subscribe((data:any)=>{})
+      this.router.navigate(['/verify-email'])
   }
 }

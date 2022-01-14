@@ -7,7 +7,7 @@
     box-shadow: 0 0 0 5px rgba(0,0,0,0.05),0 0 0 10px rgba(0,0,0,0.05);
 }
 .panel .panel-heading{
-    padding: 10px 15px;
+    padding: 20px 15px;
     border-radius: 10px 10px 0 0;
     margin: 0;
 }
@@ -161,7 +161,13 @@
     padding: 0 5px;
     margin: 0 5px;
 }
-
+img {
+  height: 45px;
+  width: 65px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
 .btn:hover {
     color: white !important;
 }

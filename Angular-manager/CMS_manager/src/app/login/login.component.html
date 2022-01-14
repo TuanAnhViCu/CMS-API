@@ -46,6 +46,7 @@
                         [(ngModel)]="password"
                     />
                 </div>
+                <div *ngIf="err.length > 0" >{{err}}</div>
                 <div class="group">
                     <input
                         id="check"

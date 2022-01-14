@@ -16,6 +16,8 @@ import { CreateClassComponent } from './Admin/create-class/create-class.componen
 import { TableComponent } from './Admin/table/table.component';
 import { ShowClassComponent } from './profile/show-class/show-class.component';
 import { CalendarStudyComponent } from './profile/calendar-study/calendar-study.component';
+import { ShowRegisteredComponent } from './profile/show-registered/show-registered.component';
+import { ManagerRegisterComponent } from './Admin/manager-register/manager-register.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { CalendarStudyComponent } from './profile/calendar-study/calendar-study.
     TableComponent,
     ShowClassComponent,
     CalendarStudyComponent,
+    ShowRegisteredComponent,
+    ManagerRegisterComponent,
   ],
   imports: [
     BrowserModule,
