@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
-export class ResultRegisterService {
-  url:string = "http://localhost:30/api/v1/admin/submit-result-user"
+export class AddUserClassService {
+  url:string = "http://localhost:30/api/v1/admin/add-user-class"
   constructor(private cookie:CookieService, private http:HttpClient) { }
-  sendResult(id:any,result:any):Observable<any>{
+
+  addUserClass(id:any){
     const requestOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -16,7 +18,7 @@ export class ResultRegisterService {
       }),
       withCredentials: true,
       mode:'no-cros'
-     };
-     return this.http.patch(this.url,{id,result},requestOptions);
   }
+  return this.http.post(this.url,{id},requestOptions)
+}
 }

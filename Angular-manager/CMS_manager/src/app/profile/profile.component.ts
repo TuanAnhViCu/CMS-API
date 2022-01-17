@@ -21,7 +21,6 @@ constructor(private route:ActivatedRoute, private profile:ProfileService, privat
 
 ngOnInit(): void {
   this.getUser();
-  this.getCalendar();
 }
   getUser(){
     this.profile.getUser().subscribe((data:any)=>{
@@ -31,8 +30,8 @@ ngOnInit(): void {
   getCalendar() {
     this.calendar.getCalendar().subscribe((data:any)=>{
       this.calendarUser.push(data);
-      this.Calendars=data.calendars[0]
-      console.log(data.calendars)
+      this.Calendars=data.calendars
+      console.log(data)
     })
     console.log(this.Calendars);
   }

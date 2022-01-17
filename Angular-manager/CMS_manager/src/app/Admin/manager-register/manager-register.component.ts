@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SubmitRegisterService } from 'src/app/service/submit-register.service';
+import { AdmimListRegisterService } from 'src/app/service/admim-list-register.service';
+import { ResultRegisterService } from 'src/app/service/result-register.service';
+import { AddUserClassService } from 'src/app/service/add-user-class.service';
 
 @Component({
   selector: 'app-manager-register',
@@ -9,18 +11,26 @@ import { SubmitRegisterService } from 'src/app/service/submit-register.service';
 export class ManagerRegisterComponent implements OnInit {
   listRe:any = []
   result:string =""
-  constructor(private list:SubmitRegisterService) { }
+  constructor(private list:AdmimListRegisterService, private resultSv:ResultRegisterService, private add:AddUserClassService) { }
   ngOnInit(): void {
     this.listRegister()
     console.log(this.result)
   }
   
   listRegister(){
-    this.list.getRegister().subscribe((data:any)=>{
+    this.list.adminList().subscribe((data:any)=>{
       for(const [key, value]of Object.entries(data)){
         this.listRe.push(value);
       }
     })
+  }
+
+  acpect(id:any){
+      this.result = 'acpet'
+      this.resultSv.sendResult(id,this.result).subscribe((data)=>{
+        console.log(data);
+      })
+      this.add.addUserClass(id).subscribe((data)=>{})
   }
 
   

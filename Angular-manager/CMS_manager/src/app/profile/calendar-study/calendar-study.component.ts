@@ -10,13 +10,16 @@ export class CalendarStudyComponent implements OnInit {
 
   constructor(private calendar:CalendarService) { }
   calendarUser:any=[]
-  Calendars:any=[]
+  calendarss:any= []
   ngOnInit(): void {
+    this.getCalendar();
   }
   getCalendar() {
     this.calendar.getCalendar().subscribe((data:any)=>{
-      this.calendarUser.push(data);
-      this.Calendars=data.calendars[0]
-    })
+    for(const [key, value] of Object.entries(data)){
+      this.calendarUser.push(value)
+    }
+    console.log(this.calendarUser)
   }
+    )}
 }
